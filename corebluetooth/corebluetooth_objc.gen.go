@@ -8,11 +8,12 @@ import (
 
 /*
 #cgo CFLAGS: -x objective-c
-#cgo LDFLAGS: -lobjc
+#cgo LDFLAGS: -lobjc -framework CoreBluetooth
 #define __OBJC2__ 1
 #include <objc/message.h>
 #include <stdlib.h>
 
+#include <CoreBluetooth/CoreBluetooth.h>
 
 bool corebluetooth_convertObjCBool(BOOL b) {
 	if (b) { return true; }
@@ -90,10 +91,10 @@ void* CBUUID_type_UUIDWithData_(void* theData) {
 }
 
 
-void* CBATTRequest_inst_init(void *id) {
-	return [(CBATTRequest*)id
-		init];
-}
+//void* CBATTRequest_inst_init(void *id) {
+//	return [(CBATTRequest*)id
+//		init];
+//}
 
 void* CBATTRequest_inst_central(void *id) {
 	return [(CBATTRequest*)id
@@ -110,20 +111,20 @@ unsigned long CBATTRequest_inst_offset(void *id) {
 		offset];
 }
 
-void* CBAttribute_inst_init(void *id) {
-	return [(CBAttribute*)id
-		init];
-}
+//void* CBAttribute_inst_init(void *id) {
+//	return [(CBAttribute*)id
+//		init];
+//}
 
 void* CBAttribute_inst_UUID(void *id) {
 	return [(CBAttribute*)id
 		UUID];
 }
 
-void* CBCentralManager_inst_init(void *id) {
-	return [(CBCentralManager*)id
-		init];
-}
+//void* CBCentralManager_inst_init(void *id) {
+//	return [(CBCentralManager*)id
+//		init];
+//}
 
 void CBCentralManager_inst_connectPeripheral_options_(void *id, void* peripheral, void* options) {
 	[(CBCentralManager*)id
@@ -157,10 +158,10 @@ void CBCentralManager_inst_stopScan(void *id) {
 		stopScan];
 }
 
-void CBCentralManager_inst_registerForConnectionEventsWithOptions_(void *id, void* options) {
-	[(CBCentralManager*)id
-		registerForConnectionEventsWithOptions: options];
-}
+//void CBCentralManager_inst_registerForConnectionEventsWithOptions_(void *id, void* options) {
+//	[(CBCentralManager*)id
+//		registerForConnectionEventsWithOptions: options];
+//}
 
 BOOL CBCentralManager_inst_isScanning(void *id) {
 	return [(CBCentralManager*)id
@@ -177,20 +178,20 @@ void CBCentralManager_inst_setDelegate_(void *id, void* value) {
 		setDelegate: value];
 }
 
-void* CBCentral_inst_init(void *id) {
-	return [(CBCentral*)id
-		init];
-}
+//void* CBCentral_inst_init(void *id) {
+//	return [(CBCentral*)id
+//		init];
+//}
 
 unsigned long CBCentral_inst_maximumUpdateValueLength(void *id) {
 	return [(CBCentral*)id
 		maximumUpdateValueLength];
 }
 
-void* CBCharacteristic_inst_init(void *id) {
-	return [(CBCharacteristic*)id
-		init];
-}
+//void* CBCharacteristic_inst_init(void *id) {
+//	return [(CBCharacteristic*)id
+//		init];
+//}
 
 void* CBCharacteristic_inst_service(void *id) {
 	return [(CBCharacteristic*)id
@@ -217,10 +218,10 @@ BOOL CBCharacteristic_inst_isBroadcasted(void *id) {
 		isBroadcasted];
 }
 
-void* CBDescriptor_inst_init(void *id) {
-	return [(CBDescriptor*)id
-		init];
-}
+//void* CBDescriptor_inst_init(void *id) {
+//	return [(CBDescriptor*)id
+//		init];
+//}
 
 void* CBDescriptor_inst_characteristic(void *id) {
 	return [(CBDescriptor*)id
@@ -232,15 +233,15 @@ void* CBDescriptor_inst_value(void *id) {
 		value];
 }
 
-void* CBManager_inst_init(void *id) {
-	return [(CBManager*)id
-		init];
-}
-
-void* CBMutableCharacteristic_inst_init(void *id) {
-	return [(CBMutableCharacteristic*)id
-		init];
-}
+//void* CBManager_inst_init(void *id) {
+//	return [(CBManager*)id
+//		init];
+//}
+//
+//void* CBMutableCharacteristic_inst_init(void *id) {
+//	return [(CBMutableCharacteristic*)id
+//		init];
+//}
 
 void* CBMutableCharacteristic_inst_subscribedCentrals(void *id) {
 	return [(CBMutableCharacteristic*)id
@@ -253,10 +254,10 @@ void* CBMutableDescriptor_inst_initWithType_value_(void *id, void* UUID, void* v
 		value: value];
 }
 
-void* CBMutableDescriptor_inst_init(void *id) {
-	return [(CBMutableDescriptor*)id
-		init];
-}
+//void* CBMutableDescriptor_inst_init(void *id) {
+//	return [(CBMutableDescriptor*)id
+//		init];
+//}
 
 void* CBMutableService_inst_initWithType_primary_(void *id, void* UUID, BOOL isPrimary) {
 	return [(CBMutableService*)id
@@ -264,20 +265,20 @@ void* CBMutableService_inst_initWithType_primary_(void *id, void* UUID, BOOL isP
 		primary: isPrimary];
 }
 
-void* CBMutableService_inst_init(void *id) {
-	return [(CBMutableService*)id
-		init];
-}
+//void* CBMutableService_inst_init(void *id) {
+//	return [(CBMutableService*)id
+//		init];
+//}
 
-void* CBPeer_inst_init(void *id) {
-	return [(CBPeer*)id
-		init];
-}
-
-void* CBPeripheralManager_inst_init(void *id) {
-	return [(CBPeripheralManager*)id
-		init];
-}
+//void* CBPeer_inst_init(void *id) {
+//	return [(CBPeer*)id
+//		init];
+//}
+//
+//void* CBPeripheralManager_inst_init(void *id) {
+//	return [(CBPeripheralManager*)id
+//		init];
+//}
 
 void CBPeripheralManager_inst_addService_(void *id, void* service) {
 	[(CBPeripheralManager*)id
@@ -380,10 +381,10 @@ void CBPeripheral_inst_readRSSI(void *id) {
 		readRSSI];
 }
 
-void* CBPeripheral_inst_init(void *id) {
-	return [(CBPeripheral*)id
-		init];
-}
+//void* CBPeripheral_inst_init(void *id) {
+//	return [(CBPeripheral*)id
+//		init];
+//}
 
 void* CBPeripheral_inst_name(void *id) {
 	return [(CBPeripheral*)id
@@ -415,15 +416,15 @@ void* CBPeripheral_inst_RSSI(void *id) {
 		RSSI];
 }
 
-BOOL CBPeripheral_inst_ancsAuthorized(void *id) {
-	return [(CBPeripheral*)id
-		ancsAuthorized];
-}
+//BOOL CBPeripheral_inst_ancsAuthorized(void *id) {
+//	return [(CBPeripheral*)id
+//		ancsAuthorized];
+//}
 
-void* CBService_inst_init(void *id) {
-	return [(CBService*)id
-		init];
-}
+//void* CBService_inst_init(void *id) {
+//	return [(CBService*)id
+//		init];
+//}
 
 void* CBService_inst_peripheral(void *id) {
 	return [(CBService*)id
@@ -445,10 +446,10 @@ void* CBService_inst_includedServices(void *id) {
 		includedServices];
 }
 
-void* CBUUID_inst_init(void *id) {
-	return [(CBUUID*)id
-		init];
-}
+//void* CBUUID_inst_init(void *id) {
+//	return [(CBUUID*)id
+//		init];
+//}
 
 void* CBUUID_inst_data(void *id) {
 	return [(CBUUID*)id
@@ -623,7 +624,7 @@ func CBUUID_UUIDWithData_(
 
 type CBATTRequestRef interface {
 	Pointer() uintptr
-	Init_asCBATTRequest() CBATTRequest
+	//Init_asCBATTRequest() CBATTRequest
 }
 
 type gen_CBATTRequest struct {
@@ -640,15 +641,15 @@ func CBATTRequest_fromRef(ref objc.Ref) CBATTRequest {
 	return CBATTRequest_fromPointer(unsafe.Pointer(ref.Pointer()))
 }
 
-func (x gen_CBATTRequest) Init_asCBATTRequest() (
-	r0 CBATTRequest,
-) {
-	ret := C.CBATTRequest_inst_init(
-		unsafe.Pointer(x.Pointer()),
-	)
-	r0 = CBATTRequest_fromPointer(ret)
-	return
-}
+//func (x gen_CBATTRequest) Init_asCBATTRequest() (
+//	r0 CBATTRequest,
+//) {
+//	ret := C.CBATTRequest_inst_init(
+//		unsafe.Pointer(x.Pointer()),
+//	)
+//	r0 = CBATTRequest_fromPointer(ret)
+//	return
+//}
 
 func (x gen_CBATTRequest) Central() (
 	r0 CBCentral,
@@ -682,7 +683,7 @@ func (x gen_CBATTRequest) Offset() (
 
 type CBAttributeRef interface {
 	Pointer() uintptr
-	Init_asCBAttribute() CBAttribute
+	//CBAttribute() CBAttribute
 }
 
 type gen_CBAttribute struct {
@@ -699,15 +700,15 @@ func CBAttribute_fromRef(ref objc.Ref) CBAttribute {
 	return CBAttribute_fromPointer(unsafe.Pointer(ref.Pointer()))
 }
 
-func (x gen_CBAttribute) Init_asCBAttribute() (
-	r0 CBAttribute,
-) {
-	ret := C.CBAttribute_inst_init(
-		unsafe.Pointer(x.Pointer()),
-	)
-	r0 = CBAttribute_fromPointer(ret)
-	return
-}
+//func (x gen_CBAttribute) Init_asCBAttribute() (
+//	r0 CBAttribute,
+//) {
+//	ret := C.CBAttribute_inst_init(
+//		unsafe.Pointer(x.Pointer()),
+//	)
+//	r0 = CBAttribute_fromPointer(ret)
+//	return
+//}
 
 func (x gen_CBAttribute) UUID() (
 	r0 CBUUID,
@@ -721,7 +722,7 @@ func (x gen_CBAttribute) UUID() (
 
 type CBCentralManagerRef interface {
 	Pointer() uintptr
-	Init_asCBCentralManager() CBCentralManager
+	//Init_asCBCentralManager() CBCentralManager
 }
 
 type gen_CBCentralManager struct {
@@ -738,15 +739,15 @@ func CBCentralManager_fromRef(ref objc.Ref) CBCentralManager {
 	return CBCentralManager_fromPointer(unsafe.Pointer(ref.Pointer()))
 }
 
-func (x gen_CBCentralManager) Init_asCBCentralManager() (
-	r0 CBCentralManager,
-) {
-	ret := C.CBCentralManager_inst_init(
-		unsafe.Pointer(x.Pointer()),
-	)
-	r0 = CBCentralManager_fromPointer(ret)
-	return
-}
+//func (x gen_CBCentralManager) Init_asCBCentralManager() (
+//	r0 CBCentralManager,
+//) {
+//	ret := C.CBCentralManager_inst_init(
+//		unsafe.Pointer(x.Pointer()),
+//	)
+//	r0 = CBCentralManager_fromPointer(ret)
+//	return
+//}
 
 func (x gen_CBCentralManager) ConnectPeripheral_options_(
 	peripheral CBPeripheralRef,
@@ -815,15 +816,15 @@ func (x gen_CBCentralManager) StopScan() {
 	return
 }
 
-func (x gen_CBCentralManager) RegisterForConnectionEventsWithOptions_(
-	options core.NSDictionaryRef,
-) {
-	C.CBCentralManager_inst_registerForConnectionEventsWithOptions_(
-		unsafe.Pointer(x.Pointer()),
-		objc.RefPointer(options),
-	)
-	return
-}
+//func (x gen_CBCentralManager) RegisterForConnectionEventsWithOptions_(
+//	options core.NSDictionaryRef,
+//) {
+//	C.CBCentralManager_inst_registerForConnectionEventsWithOptions_(
+//		unsafe.Pointer(x.Pointer()),
+//		objc.RefPointer(options),
+//	)
+//	return
+//}
 
 func (x gen_CBCentralManager) IsScanning() (
 	r0 bool,
@@ -857,7 +858,7 @@ func (x gen_CBCentralManager) SetDelegate_(
 
 type CBCentralRef interface {
 	Pointer() uintptr
-	Init_asCBCentral() CBCentral
+	//Init_asCBCentral() CBCentral
 }
 
 type gen_CBCentral struct {
@@ -874,15 +875,15 @@ func CBCentral_fromRef(ref objc.Ref) CBCentral {
 	return CBCentral_fromPointer(unsafe.Pointer(ref.Pointer()))
 }
 
-func (x gen_CBCentral) Init_asCBCentral() (
-	r0 CBCentral,
-) {
-	ret := C.CBCentral_inst_init(
-		unsafe.Pointer(x.Pointer()),
-	)
-	r0 = CBCentral_fromPointer(ret)
-	return
-}
+//func (x gen_CBCentral) Init_asCBCentral() (
+//	r0 CBCentral,
+//) {
+//	ret := C.CBCentral_inst_init(
+//		unsafe.Pointer(x.Pointer()),
+//	)
+//	r0 = CBCentral_fromPointer(ret)
+//	return
+//}
 
 func (x gen_CBCentral) MaximumUpdateValueLength() (
 	r0 core.NSUInteger,
@@ -896,7 +897,7 @@ func (x gen_CBCentral) MaximumUpdateValueLength() (
 
 type CBCharacteristicRef interface {
 	Pointer() uintptr
-	Init_asCBCharacteristic() CBCharacteristic
+	//Init_asCBCharacteristic() CBCharacteristic
 }
 
 type gen_CBCharacteristic struct {
@@ -913,15 +914,15 @@ func CBCharacteristic_fromRef(ref objc.Ref) CBCharacteristic {
 	return CBCharacteristic_fromPointer(unsafe.Pointer(ref.Pointer()))
 }
 
-func (x gen_CBCharacteristic) Init_asCBCharacteristic() (
-	r0 CBCharacteristic,
-) {
-	ret := C.CBCharacteristic_inst_init(
-		unsafe.Pointer(x.Pointer()),
-	)
-	r0 = CBCharacteristic_fromPointer(ret)
-	return
-}
+//func (x gen_CBCharacteristic) Init_asCBCharacteristic() (
+//	r0 CBCharacteristic,
+//) {
+//	ret := C.CBCharacteristic_inst_init(
+//		unsafe.Pointer(x.Pointer()),
+//	)
+//	r0 = CBCharacteristic_fromPointer(ret)
+//	return
+//}
 
 func (x gen_CBCharacteristic) Service() (
 	r0 CBService,
@@ -975,7 +976,7 @@ func (x gen_CBCharacteristic) IsBroadcasted() (
 
 type CBDescriptorRef interface {
 	Pointer() uintptr
-	Init_asCBDescriptor() CBDescriptor
+	//CBDescriptor() CBDescriptor
 }
 
 type gen_CBDescriptor struct {
@@ -992,15 +993,15 @@ func CBDescriptor_fromRef(ref objc.Ref) CBDescriptor {
 	return CBDescriptor_fromPointer(unsafe.Pointer(ref.Pointer()))
 }
 
-func (x gen_CBDescriptor) Init_asCBDescriptor() (
-	r0 CBDescriptor,
-) {
-	ret := C.CBDescriptor_inst_init(
-		unsafe.Pointer(x.Pointer()),
-	)
-	r0 = CBDescriptor_fromPointer(ret)
-	return
-}
+//func (x gen_CBDescriptor) Init_asCBDescriptor() (
+//	r0 CBDescriptor,
+//) {
+//	ret := C.CBDescriptor_inst_init(
+//		unsafe.Pointer(x.Pointer()),
+//	)
+//	r0 = CBDescriptor_fromPointer(ret)
+//	return
+//}
 
 func (x gen_CBDescriptor) Characteristic() (
 	r0 CBCharacteristic,
@@ -1024,7 +1025,7 @@ func (x gen_CBDescriptor) Value() (
 
 type CBManagerRef interface {
 	Pointer() uintptr
-	Init_asCBManager() CBManager
+	//Init_asCBManager() CBManager
 }
 
 type gen_CBManager struct {
@@ -1041,19 +1042,19 @@ func CBManager_fromRef(ref objc.Ref) CBManager {
 	return CBManager_fromPointer(unsafe.Pointer(ref.Pointer()))
 }
 
-func (x gen_CBManager) Init_asCBManager() (
-	r0 CBManager,
-) {
-	ret := C.CBManager_inst_init(
-		unsafe.Pointer(x.Pointer()),
-	)
-	r0 = CBManager_fromPointer(ret)
-	return
-}
+//func (x gen_CBManager) Init_asCBManager() (
+//	r0 CBManager,
+//) {
+//	ret := C.CBManager_inst_init(
+//		unsafe.Pointer(x.Pointer()),
+//	)
+//	r0 = CBManager_fromPointer(ret)
+//	return
+//}
 
 type CBMutableCharacteristicRef interface {
 	Pointer() uintptr
-	Init_asCBMutableCharacteristic() CBMutableCharacteristic
+	//Init_asCBMutableCharacteristic() CBMutableCharacteristic
 }
 
 type gen_CBMutableCharacteristic struct {
@@ -1070,15 +1071,15 @@ func CBMutableCharacteristic_fromRef(ref objc.Ref) CBMutableCharacteristic {
 	return CBMutableCharacteristic_fromPointer(unsafe.Pointer(ref.Pointer()))
 }
 
-func (x gen_CBMutableCharacteristic) Init_asCBMutableCharacteristic() (
-	r0 CBMutableCharacteristic,
-) {
-	ret := C.CBMutableCharacteristic_inst_init(
-		unsafe.Pointer(x.Pointer()),
-	)
-	r0 = CBMutableCharacteristic_fromPointer(ret)
-	return
-}
+//func (x gen_CBMutableCharacteristic) Init_asCBMutableCharacteristic() (
+//	r0 CBMutableCharacteristic,
+//) {
+//	ret := C.CBMutableCharacteristic_inst_init(
+//		unsafe.Pointer(x.Pointer()),
+//	)
+//	r0 = CBMutableCharacteristic_fromPointer(ret)
+//	return
+//}
 
 func (x gen_CBMutableCharacteristic) SubscribedCentrals() (
 	r0 core.NSArray,
@@ -1092,7 +1093,7 @@ func (x gen_CBMutableCharacteristic) SubscribedCentrals() (
 
 type CBMutableDescriptorRef interface {
 	Pointer() uintptr
-	Init_asCBMutableDescriptor() CBMutableDescriptor
+	//Init_asCBMutableDescriptor() CBMutableDescriptor
 }
 
 type gen_CBMutableDescriptor struct {
@@ -1124,19 +1125,19 @@ func (x gen_CBMutableDescriptor) InitWithType_value__asCBMutableDescriptor(
 	return
 }
 
-func (x gen_CBMutableDescriptor) Init_asCBMutableDescriptor() (
-	r0 CBMutableDescriptor,
-) {
-	ret := C.CBMutableDescriptor_inst_init(
-		unsafe.Pointer(x.Pointer()),
-	)
-	r0 = CBMutableDescriptor_fromPointer(ret)
-	return
-}
+//func (x gen_CBMutableDescriptor) Init_asCBMutableDescriptor() (
+//	r0 CBMutableDescriptor,
+//) {
+//	ret := C.CBMutableDescriptor_inst_init(
+//		unsafe.Pointer(x.Pointer()),
+//	)
+//	r0 = CBMutableDescriptor_fromPointer(ret)
+//	return
+//}
 
 type CBMutableServiceRef interface {
 	Pointer() uintptr
-	Init_asCBMutableService() CBMutableService
+	//Init_asCBMutableService() CBMutableService
 }
 
 type gen_CBMutableService struct {
@@ -1168,19 +1169,19 @@ func (x gen_CBMutableService) InitWithType_primary__asCBMutableService(
 	return
 }
 
-func (x gen_CBMutableService) Init_asCBMutableService() (
-	r0 CBMutableService,
-) {
-	ret := C.CBMutableService_inst_init(
-		unsafe.Pointer(x.Pointer()),
-	)
-	r0 = CBMutableService_fromPointer(ret)
-	return
-}
+//func (x gen_CBMutableService) Init_asCBMutableService() (
+//	r0 CBMutableService,
+//) {
+//	ret := C.CBMutableService_inst_init(
+//		unsafe.Pointer(x.Pointer()),
+//	)
+//	r0 = CBMutableService_fromPointer(ret)
+//	return
+//}
 
 type CBPeerRef interface {
 	Pointer() uintptr
-	Init_asCBPeer() CBPeer
+	//Init_asCBPeer() CBPeer
 }
 
 type gen_CBPeer struct {
@@ -1197,19 +1198,19 @@ func CBPeer_fromRef(ref objc.Ref) CBPeer {
 	return CBPeer_fromPointer(unsafe.Pointer(ref.Pointer()))
 }
 
-func (x gen_CBPeer) Init_asCBPeer() (
-	r0 CBPeer,
-) {
-	ret := C.CBPeer_inst_init(
-		unsafe.Pointer(x.Pointer()),
-	)
-	r0 = CBPeer_fromPointer(ret)
-	return
-}
+//func (x gen_CBPeer) Init_asCBPeer() (
+//	r0 CBPeer,
+//) {
+//	ret := C.CBPeer_inst_init(
+//		unsafe.Pointer(x.Pointer()),
+//	)
+//	r0 = CBPeer_fromPointer(ret)
+//	return
+//}
 
 type CBPeripheralManagerRef interface {
 	Pointer() uintptr
-	Init_asCBPeripheralManager() CBPeripheralManager
+	//Init_asCBPeripheralManager() CBPeripheralManager
 }
 
 type gen_CBPeripheralManager struct {
@@ -1226,15 +1227,15 @@ func CBPeripheralManager_fromRef(ref objc.Ref) CBPeripheralManager {
 	return CBPeripheralManager_fromPointer(unsafe.Pointer(ref.Pointer()))
 }
 
-func (x gen_CBPeripheralManager) Init_asCBPeripheralManager() (
-	r0 CBPeripheralManager,
-) {
-	ret := C.CBPeripheralManager_inst_init(
-		unsafe.Pointer(x.Pointer()),
-	)
-	r0 = CBPeripheralManager_fromPointer(ret)
-	return
-}
+//func (x gen_CBPeripheralManager) Init_asCBPeripheralManager() (
+//	r0 CBPeripheralManager,
+//) {
+//	ret := C.CBPeripheralManager_inst_init(
+//		unsafe.Pointer(x.Pointer()),
+//	)
+//	r0 = CBPeripheralManager_fromPointer(ret)
+//	return
+//}
 
 func (x gen_CBPeripheralManager) AddService_(
 	service CBMutableServiceRef,
@@ -1339,7 +1340,7 @@ func (x gen_CBPeripheralManager) IsAdvertising() (
 
 type CBPeripheralRef interface {
 	Pointer() uintptr
-	Init_asCBPeripheral() CBPeripheral
+	//Init_asCBPeripheral() CBPeripheral
 }
 
 type gen_CBPeripheral struct {
@@ -1451,15 +1452,15 @@ func (x gen_CBPeripheral) ReadRSSI() {
 	return
 }
 
-func (x gen_CBPeripheral) Init_asCBPeripheral() (
-	r0 CBPeripheral,
-) {
-	ret := C.CBPeripheral_inst_init(
-		unsafe.Pointer(x.Pointer()),
-	)
-	r0 = CBPeripheral_fromPointer(ret)
-	return
-}
+//func (x gen_CBPeripheral) Init_asCBPeripheral() (
+//	r0 CBPeripheral,
+//) {
+//	ret := C.CBPeripheral_inst_init(
+//		unsafe.Pointer(x.Pointer()),
+//	)
+//	r0 = CBPeripheral_fromPointer(ret)
+//	return
+//}
 
 func (x gen_CBPeripheral) Name() (
 	r0 core.NSString,
@@ -1521,19 +1522,19 @@ func (x gen_CBPeripheral) RSSI() (
 	return
 }
 
-func (x gen_CBPeripheral) AncsAuthorized() (
-	r0 bool,
-) {
-	ret := C.CBPeripheral_inst_ancsAuthorized(
-		unsafe.Pointer(x.Pointer()),
-	)
-	r0 = convertObjCBoolToGo(ret)
-	return
-}
+//func (x gen_CBPeripheral) AncsAuthorized() (
+//	r0 bool,
+//) {
+//	ret := C.CBPeripheral_inst_ancsAuthorized(
+//		unsafe.Pointer(x.Pointer()),
+//	)
+//	r0 = convertObjCBoolToGo(ret)
+//	return
+//}
 
 type CBServiceRef interface {
 	Pointer() uintptr
-	Init_asCBService() CBService
+	//Init_asCBService() CBService
 }
 
 type gen_CBService struct {
@@ -1550,15 +1551,15 @@ func CBService_fromRef(ref objc.Ref) CBService {
 	return CBService_fromPointer(unsafe.Pointer(ref.Pointer()))
 }
 
-func (x gen_CBService) Init_asCBService() (
-	r0 CBService,
-) {
-	ret := C.CBService_inst_init(
-		unsafe.Pointer(x.Pointer()),
-	)
-	r0 = CBService_fromPointer(ret)
-	return
-}
+//func (x gen_CBService) Init_asCBService() (
+//	r0 CBService,
+//) {
+//	ret := C.CBService_inst_init(
+//		unsafe.Pointer(x.Pointer()),
+//	)
+//	r0 = CBService_fromPointer(ret)
+//	return
+//}
 
 func (x gen_CBService) Peripheral() (
 	r0 CBPeripheral,
@@ -1602,7 +1603,7 @@ func (x gen_CBService) IncludedServices() (
 
 type CBUUIDRef interface {
 	Pointer() uintptr
-	Init_asCBUUID() CBUUID
+	//Init_asCBUUID() CBUUID
 }
 
 type gen_CBUUID struct {
@@ -1619,15 +1620,15 @@ func CBUUID_fromRef(ref objc.Ref) CBUUID {
 	return CBUUID_fromPointer(unsafe.Pointer(ref.Pointer()))
 }
 
-func (x gen_CBUUID) Init_asCBUUID() (
-	r0 CBUUID,
-) {
-	ret := C.CBUUID_inst_init(
-		unsafe.Pointer(x.Pointer()),
-	)
-	r0 = CBUUID_fromPointer(ret)
-	return
-}
+//func (x gen_CBUUID) Init_asCBUUID() (
+//	r0 CBUUID,
+//) {
+//	ret := C.CBUUID_inst_init(
+//		unsafe.Pointer(x.Pointer()),
+//	)
+//	r0 = CBUUID_fromPointer(ret)
+//	return
+//}
 
 func (x gen_CBUUID) Data() (
 	r0 core.NSData,

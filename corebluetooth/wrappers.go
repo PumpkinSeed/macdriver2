@@ -1,9 +1,5 @@
 package corebluetooth
 
-type CBATTRequest struct {
-	gen_CBATTRequest
-}
-
 type CBAttribute struct {
 	gen_CBAttribute
 }
